@@ -39,7 +39,7 @@ module.exports.routes = {
   'post /api/add_user': "UserController.addUser",
   
   'post /api/add_task': "TodoSailsController.addTask",
-  'get /api/all_tasks': "TodoSailsController.getAllTasks",
+  'get /api/all_tasks': "TodoSailsController.getAllTasks", //This will get all the incomplete tasks
   'get /api/updateTask/:id/:status': "TodoSailsController.updateTask",
   'get /api/deleteTask/:id': "TodoSailsController.deleteTask"
 

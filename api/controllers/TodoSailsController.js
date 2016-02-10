@@ -19,7 +19,7 @@ module.exports = {
     });
   },
   getAllTasks: function(req, res) {
-    TodoSails.find().exec(function (err, todoList) {
+    TodoSails.find({status:"false"}).exec(function (err, todoList) {
       if (err) {
         res.status(err.status);
         res.json(err.details);
