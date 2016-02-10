@@ -2,29 +2,6 @@ angular.module('TodoModule').controller('TodoController', ['$scope', '$http', '$
   $scope.helloAngular = "Hello World Angular";
   $scope.showProgressbar = false;
   
-  $scope.todos = [
-      {
-        name: 'Achiever Dashboard UI items',
-        desc: 'Replicate the same design from iOS to Android'
-      },
-      {
-        name: 'Send message through notification',
-        desc: 'Notification should be received on a new message arrival'
-      },
-      {
-        name: 'Crash on dialog display',
-        desc: 'Dialog box gets crashed when screen idle for a long time'
-      },
-      {
-        name: 'Hide keyboard in edit profile screen',
-        desc: 'Hide the keyboard on the tap of the background image. Refer iOS'
-      },
-      {
-        name: 'Quiz list screen',
-        desc: 'Create the quiz list screen from scratch'
-      }
-    ];
-    
   $scope.addTask = function() {
     $scope.showProgressbar = true;
     $scope.task.status = false;
@@ -58,5 +35,19 @@ angular.module('TodoModule').controller('TodoController', ['$scope', '$http', '$
       $scope.showProgressbar = false;
     });
   }
+  
+  $scope.getTaskList = function() {
+    $http.get("/api/all_tasks")
+    .then(
+      function success(response) {
+        $scope.todos = response.data;
+      }, 
+      function error(response) {
+        //TODO Inform the user that the error has occured.
+        console.log("Error occured");
+    });
+  }
+  
+  $scope.getTaskList();
   
 }]);
