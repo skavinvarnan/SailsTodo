@@ -33,7 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'myhome'
+    view: 'todo'
   },
   'get /api/test_controller': "UserController.test",
   'post /api/add_user': "UserController.addUser"

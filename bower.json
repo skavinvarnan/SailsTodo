@@ -1,0 +1,21 @@
+{
+  "name": "assets",
+  "description": "JS and CSS dependency for the view part of the app",
+  "main": "app.js",
+  "authors": [
+    "Kavin Varnan"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~1.0.3"
+  }
+}

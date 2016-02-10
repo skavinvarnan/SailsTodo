@@ -31,7 +31,21 @@ module.exports = function(grunt) {
 				src: ['**/*'],
 				dest: 'www'
 			}]
-		}
+		},
+    jsDeps: {
+      files: [{
+        '.tmp/public/js/dependencies/angular.js': 'bower_components/angular/angular.min.js',
+        '.tmp/public/js/dependencies/angular-animate.js': 'bower_components/angular-animate/angular-animate.min.js',
+        '.tmp/public/js/dependencies/angular-aria.js': 'bower_components/angular-aria/angular-aria.min.js',
+        '.tmp/public/js/dependencies/angular-messages.js': 'bower_components/angular-messages/angular-messages.min.js',
+        '.tmp/public/js/dependencies/angular-material.js': 'bower_components/angular-material/angular-material.min.js'
+      }]
+    },
+    cssDeps: {
+      files: [{
+        '.tmp/public/styles/angular-material/angular-material.css': 'bower_components/angular-material/angular-material.min.css'
+      }]
+    }
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
