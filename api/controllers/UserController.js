@@ -6,6 +6,9 @@
  */
 
 module.exports = {
-	
+	test: function(req, res) {
+    res.status(200);
+    res.send("Your test controller works");
+  }
 };
 
