@@ -36,7 +36,12 @@ module.exports.routes = {
     view: 'todo'
   },
   'get /api/test_controller': "UserController.test",
-  'post /api/add_user': "UserController.addUser"
+  'post /api/add_user': "UserController.addUser",
+  
+  'post /api/add_task': "TodoSailsController.addTask",
+  'get /api/all_tasks': "TodoSailsController.getAllTasks",
+  'get /api/updateTask/:id/:status': "TodoSailsController.updateTask",
+  'get /api/deleteTask/:id': "TodoSailsController.deleteTask"
 
   /***************************************************************************
   *                                                                          *
