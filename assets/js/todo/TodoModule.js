@@ -1,1 +1,1 @@
-angular.module('TodoModule', ['ngMaterial']);
+angular.module('TodoModule', ['ngMaterial', 'ngMessages']);

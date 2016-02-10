@@ -15,7 +15,37 @@
       <div layout="row">
         <div flex="50">
           <md-content flex layout-padding>
-            <p>test</p>
+            <md-toolbar class="md-primary">
+              <div class="md-toolbar-tools">
+                <h2 class="md-flex">Add a Task</h2>
+              </div>
+            </md-toolbar>
+            <md-content flex layout-padding>
+              <form name="taskForm" flex>
+                <md-input-container class="md-block">
+                  <label>Task name</label>
+                  <input required name="name" ng-model="task.name">
+                  <div ng-messages="taskForm.name.$error">
+                    <div ng-message="required">This is required.</div>
+                  </div>
+                </md-input-container>
+                
+                <md-input-container class="md-block">
+                  <label>Description</label>
+                  <textarea  style="height:100px;" ng-model="task.description" md-maxlength="400" rows="5" md-select-on-focus></textarea>
+                </md-input-container>
+                
+                <div layout="row">
+                  <div flex="65">
+                  </div>
+                  <div flex="10">
+                    <md-progress-circular md-mode="indeterminate" ng-show="showProgressbar"></md-progress-circular>
+                  </div>
+                  <md-button type="submit" ng-click="addTask()" class="md-raised md-primary" flex="25" ng-disabled="showProgressbar">Add Task</md-button>
+                </div>
+                
+              </form>
+            </md-content>
           </md-content>
         </div>
         <div flex="50">
