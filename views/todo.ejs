@@ -57,7 +57,7 @@
             </md-toolbar>
             <md-content flex layout-padding>
               <md-list-item class="md-2-line" ng-repeat="todo in todos">
-                <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+                <md-checkbox ng-change="taskStatusChanged()" ng-model="todo.status" aria-label="status">
                 </md-checkbox>
                 <div class="md-list-item-text" layout="column">
                   <h3>{{ todo.name }}</h3>

@@ -50,4 +50,25 @@ angular.module('TodoModule').controller('TodoController', ['$scope', '$http', '$
   
   $scope.getTaskList();
   
+  $scope.taskStatusChanged = function() {
+    var todosArray = $scope.todos;
+    for(var i = 0; i < todosArray.length; i++) {
+      if(todosArray[i].status === true) {
+        $http.get("/api/updateTask/" + todosArray[i].id + "/true")
+        .then(
+          function success(response) {
+            console.log("Updated task");
+            $scope.getTaskList();
+          }, 
+          function error(response) {
+            console.log("Error occured");
+        });
+      }
+    }
+  }
+  
+  $scope.$watch('todos.status', function() {
+    console.log('hey, todos has changed!');
+  });
+  
 }]);
