@@ -1,3 +1,3 @@
 # SailsPresentation
 
-a [Sails](http://sailsjs.org) application
+Stay tuned. Detailed document coming soon
