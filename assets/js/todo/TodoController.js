@@ -3,33 +3,35 @@ angular.module('TodoModule').controller('TodoController', ['$scope', '$http', '$
   $scope.showProgressbar = false;
   
   $scope.addTask = function() {
-    $scope.showProgressbar = true;
-    $scope.task.status = false;
-    $http.post("/api/add_task", $scope.task)
-    .then(
-      function success(response) {
-        $mdToast.show(
-          $mdToast.simple()
-            .textContent('Your task has been successfully added.')
-            .hideDelay(3000)
-        );
-        $scope.task.name = '';
-        $scope.task.description = '';
-        $scope.getTaskList();
-      }, 
-      function error(response) {
-        $mdDialog.show(
-        $mdDialog.alert()
-          .parent(angular.element(document.querySelector('#popupContainer')))
-          .clickOutsideToClose(false)
-          .title('Error')
-          .textContent('Error while adding task. Please try again.')
-          .ariaLabel('Error')
-          .ok('ok')
-        );
-    }).finally(function() {
-      $scope.showProgressbar = false;
-    });
+    if($scope.task.name !== '') {
+      $scope.showProgressbar = true;
+      $scope.task.status = false;
+      $http.post("/api/add_task", $scope.task)
+      .then(
+        function success(response) {
+          $mdToast.show(
+            $mdToast.simple()
+              .textContent('Your task has been successfully added.')
+              .hideDelay(3000)
+          );
+          $scope.task.name = '';
+          $scope.task.description = '';
+          $scope.getTaskList();
+        }, 
+        function error(response) {
+          $mdDialog.show(
+          $mdDialog.alert()
+            .parent(angular.element(document.querySelector('#popupContainer')))
+            .clickOutsideToClose(false)
+            .title('Error')
+            .textContent('Error while adding task. Please try again.')
+            .ariaLabel('Error')
+            .ok('ok')
+          );
+      }).finally(function() {
+        $scope.showProgressbar = false;
+      });
+    }
   }
   
   $scope.getTaskList = function() {
