@@ -1,4 +1,4 @@
-angular.module('TodoModule').controller('TodoController', ['$scope', '$http', '$mdDialog', function($scope, $http, $mdDialog) { 
+angular.module('TodoModule').controller('TodoController', ['$scope', '$http', '$mdDialog', '$mdToast', function($scope, $http, $mdDialog, $mdToast) { 
   $scope.helloAngular = "Hello World Angular";
   $scope.showProgressbar = false;
   
@@ -8,19 +8,14 @@ angular.module('TodoModule').controller('TodoController', ['$scope', '$http', '$
     $http.post("/api/add_task", $scope.task)
     .then(
       function success(response) {
-        $mdDialog.show(
-        $mdDialog.alert()
-          .parent(angular.element(document.querySelector('#popupContainer')))
-          .clickOutsideToClose(false)
-          .title('Task Added')
-          .textContent('Your task has been successfully added.')
-          .ariaLabel('Task Added')
-          .ok('ok')
-        ).then(function() {
-          $scope.task.name = '';
-          $scope.task.description = '';
-          $scope.getTaskList();
-        });
+        $mdToast.show(
+          $mdToast.simple()
+            .textContent('Your task has been successfully added.')
+            .hideDelay(3000)
+        );
+        $scope.task.name = '';
+        $scope.task.description = '';
+        $scope.getTaskList();
       }, 
       function error(response) {
         $mdDialog.show(
