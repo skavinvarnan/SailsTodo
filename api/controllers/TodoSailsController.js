@@ -25,7 +25,7 @@ module.exports = {
         res.json(err.details);
       } else {
         res.status(200);
-        res.json(todoList);
+        res.json(todoList.reverse());
       }
     });
   },
