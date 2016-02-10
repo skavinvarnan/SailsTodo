@@ -8,7 +8,17 @@
 module.exports = {
   connection: 'mySQL',
   attributes: {
-
+    firstName: {
+      type: 'string',
+      required: true
+    },
+    lastName: {
+      type: 'string'
+    },
+    email: {
+      type: 'string',
+      unique: true
+    }
   }
 };
 
