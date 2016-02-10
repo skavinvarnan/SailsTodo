@@ -68,8 +68,4 @@ angular.module('TodoModule').controller('TodoController', ['$scope', '$http', '$
     }
   }
   
-  $scope.$watch('todos.status', function() {
-    console.log('hey, todos has changed!');
-  });
-  
 }]);
