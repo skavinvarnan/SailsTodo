@@ -19,6 +19,7 @@ angular.module('TodoModule').controller('TodoController', ['$scope', '$http', '$
         ).then(function() {
           $scope.task.name = '';
           $scope.task.description = '';
+          $scope.getTaskList();
         });
       }, 
       function error(response) {
