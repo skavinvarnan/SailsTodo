@@ -11,7 +11,34 @@
   </head>
   <body ng-controller="TodoController">
     
-    <h1>{{helloAngular}}</h1>
+    <md-content flex layout-padding>
+      <div layout="row">
+        <div flex="50">
+          <md-content flex layout-padding>
+            <p>test</p>
+          </md-content>
+        </div>
+        <div flex="50">
+          <md-content flex layout-padding>
+            <md-toolbar class="md-warn">
+              <div class="md-toolbar-tools">
+                <h2 class="md-flex">List of Tasks</h2>
+              </div>
+            </md-toolbar>
+            <md-content flex layout-padding>
+              <md-list-item class="md-2-line" ng-repeat="todo in todos">
+                <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+                </md-checkbox>
+                <div class="md-list-item-text" layout="column">
+                  <h3>{{ todo.name }}</h3>
+                  <h4>{{ todo.desc }}</h4>
+                </div>
+              </md-list-item>
+            </md-content>
+          </md-content>
+        </div>
+      </div>
+    </md-content>
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
     <script src="/js/dependencies/angular.js"></script>
