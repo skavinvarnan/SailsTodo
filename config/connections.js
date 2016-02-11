@@ -64,6 +64,11 @@ module.exports.connections = {
     // password: 'password',
     // database: 'your_mongo_db_name_here'
   },
+  
+  mongoLabsMongoDB: {
+    adapter: 'sails-mongo',
+    url: 'mongodb://root:tomcat@ds061345.mongolab.com:61345/sailstodo'
+  },
 
   /***************************************************************************
   *                                                                          *

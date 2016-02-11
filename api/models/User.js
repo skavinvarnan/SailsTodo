@@ -6,7 +6,8 @@
 */
 
 module.exports = {
-  connection: 'mySQL',
+  //connection: 'mySQL', // Local mySQL
+  connection: 'mongoLabsMongoDB', //Cloud mongoDB
   attributes: {
     firstName: {
       type: 'string',
