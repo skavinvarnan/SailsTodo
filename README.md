@@ -4,7 +4,10 @@ A sample application built with SailsJS which sits on top of NodeJS and Express.
 
 This application so only for presentation purpose and not production ready.
 
-### prerequisites ###
+#### Demo ####
+[Click here](http://sailstodo.herokuapp.com/) for the application demo.
+
+### Prerequisites ###
 [NodeJS](https://nodejs.org/en/download/)
 
 [Bower](http://bower.io/#install-bower)
