@@ -44,12 +44,16 @@ mySQL: {
   }
 ```
 
-6) Run the app
+6) Switch the comments to match "mySQL" in [TodoSails.js](https://github.com/skavinvarnan/SailsTodo/blob/master/api/models/TodoSails.js#L9) and [User.js](https://github.com/skavinvarnan/SailsTodo/blob/master/api/models/User.js#L9)
+
+7) If you dont have your own MySQL server ignore point 5 and 6
+
+8) Run the app
 ```shell
 $ sails lift
 ```
 
-7) Navigate to [http://127.0.0.1:1337/](http://127.0.0.1:1337/) on your browser
+9) Navigate to [http://127.0.0.1:1337/](http://127.0.0.1:1337/) on your browser
 
 ### Development environment ###
 
