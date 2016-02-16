@@ -15,22 +15,22 @@ This application so only for presentation purpose and not production ready.
 ### Compile Instruction ###
 1) Clone the complete repo into your computer 
 ```shell
-git clone https://github.com/skavinvarnan/SailsTodo.git
+$ git clone https://github.com/skavinvarnan/SailsTodo.git
 ```
 
 2) cd to the project directory
 ```shell
-cd SailsTodo
+$ cd SailsTodo
 ```
 
 3) Install all project dependency
 ```shell
-npm install
+$ npm install
 ```
 
 4) Install Javascript and Css dependency
 ```shell
-bower install
+$ bower install
 ```
 
 5) Point MySQL connection [here](https://github.com/skavinvarnan/SailsTodo/blob/master/config/connections.js#L43)
@@ -46,7 +46,7 @@ mySQL: {
 
 6) Run the app
 ```shell
-sails lift
+$ sails lift
 ```
 
 7) Navigate to [http://127.0.0.1:1337/](http://127.0.0.1:1337/) on your browser
