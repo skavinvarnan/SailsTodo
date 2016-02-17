@@ -1,3 +1,5 @@
+Google Slide Presentation [link](https://docs.google.com/presentation/d/1whVIxcSx-xeTC5zUQ8PKYHNOV4jE77Rrpyv5xQj9BMs/edit?usp=sharing)
+
 #### What is Nodejs
 1. Its a just a backend server build with C. JavaScript code can also run on the server.
 2. Which makes it as a bundle like ASP + IIS
